@@ -16,3 +16,4 @@ Please see the following resources for more information:
 5. http://wiki.geos-chem.org/GEOS-Chem-Unit-Tester
 6. http://wiki.geos-chem.org/Creating_GEOS-Chem_run_directories
 # GC_CODE
+# GC_PAH_nest
