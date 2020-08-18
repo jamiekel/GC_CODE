@@ -1,0 +1,34 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% NOTE: It is recommended to use the gitk viewer to examine the source    %%%
+%%%       code modifications that have been added to GEOS-Chem!             %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+BAP species added in to species_database_mod.F90
+BAPBCPO species added in to species_database_mod.F90 - COPYING BCPO data
+BAPBCPI species added in to species_database_mod.F90 - COPYING BCPI data
+
+-----------------------------------------------------
+Custom chemistry now consists of tropchem + soa + PAH
+-----------------------------------------------------
+BAP species added to globchem.spc
+BAP + OH added to globchem.eqn
+BAP added to globchem.def
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+When compling new chemistry with KKP
+The follwoing lines must be commented out in gckpp_Global_F90
+
+(40) ! VAR, FIX are chunks of array C
+(41) !      EQUIVALENCE( C(1),VAR(1) )
+(42) !      EQUIVALENCE( C(307),FIX(1) )
+
+When using custom chemistry the gckpp.kpp from the KPP
+git repositiory must be used not the gckpp.kpp from standard chem.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+New pah_mod.F90 module added which contains the BAP on BCPO to 
+BAP on BCPI conversion.
+CHEMPAHCARBON subroutine within module called in the chemistry_mod.F
+module.
+
+pah_mod.F90 added to the GeosCore Makefile.
